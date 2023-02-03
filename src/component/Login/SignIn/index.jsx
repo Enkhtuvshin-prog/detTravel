@@ -1,31 +1,31 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import axios from 'axios';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Snackbar, Alert } from '@mui/material';
+import * as React from "react";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Link from "@mui/material/Link";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import axios from "axios";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Snackbar, Alert } from "@mui/material";
 
 const theme = createTheme();
 
-export default function SignIn({setIsSignIn, handleClose, setUser} ) {
-  const [email, setEmail] =React.useState("")
-  const [password, setPassword] =React.useState("");
+export default function SignIn({ setIsSignIn, handleClose, setUser }) {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
   const [message, setMessage] = React.useState("");
   const [isAlert, setAlert] = React.useState(false);
-  const [status, setStatus]= React.useState("error");
+  const [status, setStatus] = React.useState("error");
 
-  const changeEmail = (e) =>{
-    setEmail(e.target.value)
+  const changeEmail = (e) => {
+    setEmail(e.target.value);
   };
-  const changePassword = (e) =>{
-    setPassword(e.target.value)
+  const changePassword = (e) => {
+    setPassword(e.target.value);
   };
   const signin = async (email, password) => {
     try {
@@ -35,11 +35,13 @@ export default function SignIn({setIsSignIn, handleClose, setUser} ) {
       });
       localStorage.setItem("user", JSON.stringify(res.data.user));
       setUser(res.data.user);
-      console.log("res:", res)
-      setMessage(res.data.message)
+      console.log("res:", res);
+      setMessage(res.data.message);
       setStatus("success");
-      setAlert(true)
-      setTimeout(()=>{handleClose()}, "3000")
+      setAlert(true);
+      setTimeout(() => {
+        handleClose();
+      }, "3000");
       // handleClose();
     } catch (err) {
       console.log("err", err);
@@ -48,33 +50,31 @@ export default function SignIn({setIsSignIn, handleClose, setUser} ) {
       setAlert(true);
     }
   };
-const clickLog =()=>{
-  if(email === "" || password === ""){
-    setMessage(" Email eswel password hooson bna");
-    return;
-  }
-  signin(email, password);
-}
+  const clickLog = () => {
+    if (email === "" || password === "") {
+      setMessage(" Email eswel password hooson bna");
+      return;
+    }
+    signin(email, password);
+  };
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <Box
           sx={{
             marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box 
-          // component="form" onSubmit={handleSubmit} 
-          noValidate sx={{ mt: 1 }}>
+          <Box noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -97,7 +97,7 @@ const clickLog =()=>{
               onChange={changePassword}
               // autoComplete="current-password"
             />
-            
+
             <Button
               // type="submit"
               fullWidth
@@ -115,11 +115,11 @@ const clickLog =()=>{
               </Grid>
               <Grid item>
                 <Button
-                 variant="text"
-                 onClick={() => {
-                  setIsSignIn(false);
-                 }}>
-
+                  variant="text"
+                  onClick={() => {
+                    setIsSignIn(false);
+                  }}
+                >
                   Don't have an account? Sign Up
                 </Button>
               </Grid>
@@ -127,15 +127,15 @@ const clickLog =()=>{
           </Box>
         </Box>
         <Snackbar
-        anchorOrigin={{ vertical: "top", horizontal: "right" }}
-        open={isAlert}
-        onClose={() => {
-          setAlert(false);
-        }}
-        autoHideDuration={3000}
-      >
-        <Alert severity={status}>{message}</Alert>
-      </Snackbar>
+          anchorOrigin={{ vertical: "top", horizontal: "right" }}
+          open={isAlert}
+          onClose={() => {
+            setAlert(false);
+          }}
+          autoHideDuration={3000}
+        >
+          <Alert severity={status}>{message}</Alert>
+        </Snackbar>
       </Container>
     </ThemeProvider>
   );
