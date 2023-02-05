@@ -15,6 +15,7 @@ import TravelExploreTwoToneIcon from "@mui/icons-material/TravelExploreTwoTone";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Modal } from "@mui/material";
 import Login from "../Login";
+import { NavLink } from "react-router-dom";
 
 const pages = ["Home", "Review", "Trips", "Alerts"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -103,9 +104,9 @@ function NavBar({ user, openModal, setUser, handleClose, handleOpen }) {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <NavLink to={"/"} style={{ textDecoration: "none"}}  key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
+                </NavLink>
               ))}
             </Menu>
           </Box>
@@ -132,13 +133,13 @@ function NavBar({ user, openModal, setUser, handleClose, handleOpen }) {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
+              <NavLink
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "#000", display: "block" }}
+                style={{ m: 2, color: "#000", display: "block", textDecoration: "none" }}
               >
                 {page}
-              </Button>
+              </NavLink>
             ))}
           </Box>
           {/* Modal sign in & sign up */}
