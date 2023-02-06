@@ -1,6 +1,10 @@
 import React from 'react';
-import { Box } from '@mui/system';
-
+import { Box, Container } from '@mui/system';
+import ImgCard from '../../component/ImgCard';
+import { Button, Typography } from '@mui/material';
+import {Typewriter} from "react-simple-typewriter"
+import Offers from '../../component/Offrers';
+import Packages from '../../component/Packages';
 const Home = () => {
   return (
     <>
@@ -15,8 +19,28 @@ const Home = () => {
       height: "90vh",
       with: "100%"
     }} >
-
     </Box>
+    <Box sx={{position: "absolute", top: "30%", left:"10%", color:"#fff", fontSize:"2rem"}}>
+      <Typography variant='h4'>
+        A Team of professional travel expert
+      </Typography>
+      <Typography variant='h2' fontWeight={500} >
+       Explore { }
+       <span style={{ color: "orange", fontWeight: "600" }}>
+              <Typewriter
+                words={["The World", "Your tour", "Our expreince"]}
+                loop={false}
+              />
+            </span> 
+      </Typography>
+      <Button variant="outlined" color="success" sx={{my: 3, fontWeight: 600}} >Get in touch</Button>
+    </Box>
+    <Container>
+      <ImgCard/>
+      <Offers/>
+      <Packages/>
+    </Container>
+
    
     </>
   )

@@ -104,9 +104,9 @@ function NavBar({ user, openModal, setUser, handleClose, handleOpen }) {
               }}
             >
               {pages.map((page) => (
-                <NavLink to={"/"} style={{ textDecoration: "none"}}  key={page} onClick={handleCloseNavMenu}>
+                <Button sx={{ textDecoration: "none"}}  key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
-                </NavLink>
+                </Button>
               ))}
             </Menu>
           </Box>
@@ -133,13 +133,13 @@ function NavBar({ user, openModal, setUser, handleClose, handleOpen }) {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <NavLink
+              <MenuItem
                 key={page}
                 onClick={handleCloseNavMenu}
-                style={{ m: 2, color: "#000", display: "block", textDecoration: "none" }}
+                sx={{ m: 2, color: "#000", display: "block", textDecoration: "none" }}
               >
                 {page}
-              </NavLink>
+              </MenuItem>
             ))}
           </Box>
           {/* Modal sign in & sign up */}
