@@ -1,6 +1,6 @@
 import { Grid, Typography, Box } from "@mui/material";
 import React from "react";
-import CardItem from "./CardItem";
+import Itmes from "./Items";
 import { data } from "./data";
 
 const Offers = () => {
@@ -19,12 +19,10 @@ const Offers = () => {
               display: "none",
             },
           }} >
-        {/* <Slider {...settings}> */}
           {data.map((x) => (
-            <CardItem title={x.title} img={x.img} p={x.p} text={x.text} />
+            <Itmes title={x.title} img={x.img} p={x.p} text={x.text} />
           ))}
           </Box>
-        {/* </Slider> */}
       </Grid>
     </Box>
   );

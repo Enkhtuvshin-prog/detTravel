@@ -4,9 +4,9 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, Grid, Button } from "@mui/material";
-import StarIcon from "@mui/icons-material/Star";
 import HalfRating from "../Rating";
 import cardList from "./data"
+import axios from "axios";
 
 const service = [
   { icons: "/img/icons/Vector (1).png", title: "2 Flights" },
@@ -15,7 +15,12 @@ const service = [
   { icons: "/img/icons/Vector (4).png", title: "4 Activities" },
 ];
 
-export default function MediaCard() {
+export default function  MediaCard(){
+ const category = ()=> async({category}) => {
+  try{
+    const  res = await axios.get("http://localhost:8003/package", {category})
+  }
+};
   return (
     <Grid container spacing={1} sx={{my:2}} >
       {

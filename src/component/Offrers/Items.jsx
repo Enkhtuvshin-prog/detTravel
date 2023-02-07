@@ -4,9 +4,8 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
-import { Box } from "@mui/system";
 
-export default function CardItem(props) {
+export default function Itmes(props) {
   return (
     <Grid container gap={1} columns={12} justifyContent="space-between">
       <Card sx={{ width: "500px", display: "flex" }}>
