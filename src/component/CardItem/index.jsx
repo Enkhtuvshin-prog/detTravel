@@ -16,11 +16,6 @@ const service = [
 ];
 
 export default function  MediaCard(){
- const category = ()=> async({category}) => {
-  try{
-    const  res = await axios.get("http://localhost:8003/package", {category})
-  }
-};
   return (
     <Grid container spacing={1} sx={{my:2}} >
       {
