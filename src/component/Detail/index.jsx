@@ -1,11 +1,17 @@
 import CarouselCard from "./CarouselCard";
-import About from "./About";
+import AccordionItem from "./AccordionItem";
+import { Container } from "@mui/system";
+// import About from "./About";
 function DetailCard() {
   return (
     <>
-    <CarouselCard/>
-    <About/>
+    <Container>
+     <CarouselCard/>
+     <AccordionItem/>
+    {/* <About/> */}
+    </Container>
     </>
+    
   );
 }
 

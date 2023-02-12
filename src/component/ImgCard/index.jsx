@@ -13,10 +13,10 @@ const data = [
 ];
 const index = () => {
   return (
-    <Grid container spacing={1} sx={{marginTop: -20, gap:"15px", textAlign:"center"}} >
+    <Grid container spacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{marginTop: -20, gap:"15px", justifyContent:"center"}} >
       {
         data.map((data)=>      
-    <Grid item xs={12} sm={12} md={4} lg={3} sx={{ position: "relative", mx: "20px" }}>
+    <Grid item xs={12} sm={12} md={4} lg={3} sx={{ position: "relative", mx: "20px", textAlign:"center" }}>
       <Box sx={{
          display: "flex",
          gap: "30px",

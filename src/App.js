@@ -5,7 +5,7 @@ import Footer from "./component/Footer";
 import Home from "./page/Home";
 import NavBar from "./component/Navbar";
 import { Typography } from "@mui/material";
-// import DetailCard from "./component/Detail";
+import DetailCard from "./component/Detail";
 function App() {
   const [openModal, setOpenModal] = useState(false);
   const [user, setUser] = useState(localStorage.getItem("user"));
@@ -23,7 +23,7 @@ function App() {
        handleClose={handleClose}/>
       <Routes>
         <Route path="" element={ <Home/> } />
-        {/* <Route path="/Detail" element={ <DetailCard/> } /> */}
+        <Route path="/Detail" element={ <DetailCard/> } />
       </Routes>
       <Footer/>
     </Router>

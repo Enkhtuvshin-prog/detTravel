@@ -104,7 +104,7 @@ function NavBar({ user, openModal, setUser, handleClose, handleOpen }) {
               }}
             >
               {pages.map((page) => (
-                <Button sx={{ textDecoration: "none"}}  key={page} onClick={handleCloseNavMenu}>
+                <Button  sx={{ textDecoration: "none"}}  key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </Button>
               ))}
@@ -136,7 +136,7 @@ function NavBar({ user, openModal, setUser, handleClose, handleOpen }) {
               <MenuItem
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ m: 2, color: "#000", display: "block", textDecoration: "none" }}
+                // sx={{ m: 2, color: "#000", display: "block", textDecoration: "none" }}
               >
                 {page}
               </MenuItem>

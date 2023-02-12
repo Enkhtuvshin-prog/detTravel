@@ -60,6 +60,7 @@ function CarouselCard() {
         <Box style={{
           padding: "0 20px"
         }}>
+          
           <Carousel
             data={data}
             // time={9000}
@@ -81,7 +82,7 @@ function CarouselCard() {
             style={{
               textAlign: "center",
               maxWidth: "850px",
-              maxHeight: "500px",
+              // maxHeight: "500px",
               margin: "40px auto",
             }}
           />
