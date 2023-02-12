@@ -4,6 +4,7 @@ import ImgCard from '../../component/ImgCard';
 import { Button, Typography } from '@mui/material';
 import {Typewriter} from "react-simple-typewriter"
 import Offers from '../../component/Offrers';
+import Service from "../../component/Services"
 import Packages from '../../component/Packages';
 const Home = () => {
   return (
@@ -38,6 +39,7 @@ const Home = () => {
     <Container>
       <ImgCard/>
       <Offers/>
+      <Service/>
       <Packages/>
     </Container>
 

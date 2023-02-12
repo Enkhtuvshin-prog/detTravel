@@ -6,6 +6,8 @@ import Home from "./page/Home";
 import NavBar from "./component/Navbar";
 import { Typography } from "@mui/material";
 import DetailCard from "./component/Detail";
+import { createContext, Provider } from "react";
+export const UserContext = createContext(null)
 function App() {
   const [openModal, setOpenModal] = useState(false);
   const [user, setUser] = useState(localStorage.getItem("user"));
@@ -14,19 +16,22 @@ function App() {
   const handleClose = () => setOpenModal(false);
   return (
     <>
+    <UserContext.Provider value={{ openModal, user, setUser, handleOpen, handleClose }} >
     <Router>
       <NavBar 
-       user={user}
-       setUser={setUser}
-       openModal={openModal}
-       handleOpen={handleOpen}
-       handleClose={handleClose}/>
+      //  user={user}
+      //  setUser={setUser}
+      //  openModal={openModal}
+      //  handleOpen={handleOpen}
+      //  handleClose={handleClose}
+      />
       <Routes>
         <Route path="" element={ <Home/> } />
         <Route path="/Detail" element={ <DetailCard/> } />
       </Routes>
       <Footer/>
     </Router>
+    </UserContext.Provider>
     </>
   );
 }

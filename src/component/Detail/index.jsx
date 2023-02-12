@@ -1,17 +1,16 @@
 import CarouselCard from "./CarouselCard";
 import AccordionItem from "./AccordionItem";
-import { Container } from "@mui/system";
+import { Container, Box } from "@mui/system";
 // import About from "./About";
 function DetailCard() {
   return (
-    <>
-    <Container>
-     <CarouselCard/>
-     <AccordionItem/>
-    {/* <About/> */}
-    </Container>
-    </>
-    
+    <Box id= "Package">
+      <Container>
+        <CarouselCard />
+        <AccordionItem />
+      </Container>
+    </Box>
+
   );
 }
 

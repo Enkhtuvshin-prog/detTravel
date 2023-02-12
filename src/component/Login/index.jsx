@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 
-const Login = ( {handleClose, setUser} ) => {
+const Login = (  ) => {
     const [isSignIn, setIsSignIn]= useState(true)
   return (
    <>
@@ -11,7 +11,7 @@ const Login = ( {handleClose, setUser} ) => {
     left: '50%',
     transform: 'translate(-50%, -50%)', position: 'absolute', }} >
         {
-            isSignIn ? (<SignIn setIsSignIn={setIsSignIn} setUser={setUser} handleClose={handleClose} /> ) : ( <SignUp setIsSignIn={setIsSignIn}  setUser={setUser} /> )
+            isSignIn ? (<SignIn setIsSignIn={setIsSignIn} /> ) : ( <SignUp setIsSignIn={setIsSignIn}  /> )
         }
    </Box>
    </>
@@ -21,3 +21,4 @@ const Login = ( {handleClose, setUser} ) => {
 }
 
 export default Login
+//{handleClose, setUser}

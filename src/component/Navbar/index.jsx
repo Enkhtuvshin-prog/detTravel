@@ -15,14 +15,17 @@ import TravelExploreTwoToneIcon from "@mui/icons-material/TravelExploreTwoTone";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Modal } from "@mui/material";
 import Login from "../Login";
+import { UserContext } from "../../App";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
 
 const pages = ["Home", "Review", "Trips", "Alerts"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-function NavBar({ user, openModal, setUser, handleClose, handleOpen }) {
+function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const { user, setUser, openModal,  handleClose, handleOpen } = useContext(UserContext)
   // const [open, setOpen] = React.useState(false);
   // const onClick = () => setOpen(true);
   // const onClose = () => setOpen(false);
@@ -179,7 +182,9 @@ function NavBar({ user, openModal, setUser, handleClose, handleOpen }) {
             </Box>
           )}
           <Modal open={openModal} onClose={handleClose}>
-            <Login handleClose={handleClose} setUser={setUser} />
+            <Login 
+            // handleClose={handleClose} setUser={setUser}
+             />
           </Modal>
           <Box>
             <ShoppingCartIcon sx={{ fontSize: "2rem", marginX: "1rem" }} />

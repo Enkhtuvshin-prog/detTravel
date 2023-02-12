@@ -9,17 +9,19 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import axios from "axios";
+import { UserContext } from "../../../App";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Snackbar, Alert } from "@mui/material";
 
 const theme = createTheme();
 
-export default function SignIn({ setIsSignIn, handleClose, setUser }) {
+export default function SignIn({ setIsSignIn }) {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [message, setMessage] = React.useState("");
   const [isAlert, setAlert] = React.useState(false);
   const [status, setStatus] = React.useState("error");
+  const {handleClose, setUser} = React.useContext(UserContext)
 
   const changeEmail = (e) => {
     setEmail(e.target.value);
@@ -41,7 +43,7 @@ export default function SignIn({ setIsSignIn, handleClose, setUser }) {
       setAlert(true);
       setTimeout(() => {
         handleClose();
-      }, "3000");
+      }, "1000");
       // handleClose();
     } catch (err) {
       console.log("err", err);

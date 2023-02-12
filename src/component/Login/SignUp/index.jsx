@@ -11,6 +11,7 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+// import { UserContext } from "../../../App";
 
 export default function SignUp(props) {
   const [email, setEmail] = useState("");
@@ -20,7 +21,7 @@ export default function SignUp(props) {
   const [message, setMessage] = useState("");
   const [isAlert, setAlert] = useState("");
   const [status, setStatus] = useState("error");
-
+// const {setUser} = React.useContext(UserContext)
   const changeEmail = (e) => {
     setEmail(e.target.value);
   };
