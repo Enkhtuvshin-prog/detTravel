@@ -17,8 +17,8 @@ const Service = () => {
             <Grid container spacing={1} justifyContent= "center" marginY={2}>
                 {
                     service.map((x) =>
-                        <Grid item xs={12} sm={6} md={4} lg={3}>
-                            <Card sx={{ minWidth: 275, margin: "auto", padding:1 }}>
+                        <Grid item xs={12} sm={6} md={4} lg={3} sx={{marginX: 2}} >
+                            <Card sx={{ minWidth: 275, height: "180px", margin: "auto", padding:1 }}>
                             <GradeIcon sx={{color: "#009688"}}/>
                                 <CardContent>
                                     <Typography variant='h3' sx={{ fontSize: "1.5rem" }}  >

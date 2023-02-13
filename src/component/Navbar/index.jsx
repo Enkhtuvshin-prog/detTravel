@@ -18,8 +18,14 @@ import Login from "../Login";
 import { UserContext } from "../../App";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
+import { fontSize } from "@mui/system";
 
-const pages = ["Home", "Review", "Trips", "Alerts"];
+const pages = [
+  {title:"Home", link:"/"}, 
+  {title:"Review", link: "/review"},
+  {title:"Trips", link: "/trips"},
+  {title: "Alerts", link: "/alets"}
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function NavBar() {
@@ -52,8 +58,8 @@ function NavBar() {
 
   return (
     <AppBar
-      position="static"
-      sx={{ backgroundColor: "transparent", color: "#000" }}
+      // position="static"
+      sx={{ backgroundColor: "#2d394b", color: "#fff",  }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -108,13 +114,14 @@ function NavBar() {
               }}
             >
               {pages.map((page) => (
-                <Button
-                  sx={{ textDecoration: "none" }}
+               
+                  <NavLink to={page.link} 
                   key={page}
                   onClick={handleCloseNavMenu}
-                >
-                  <Typography textAlign="center">{page}</Typography>
-                </Button>
+                  style={{textDecoration: "none", margin:1, color: "#fff" }}
+                    >
+                  <Typography textAlign="center">{page.title}</Typography>
+                  </NavLink>
               ))}
             </Menu>
           </Box>
@@ -141,13 +148,13 @@ function NavBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <MenuItem
-                key={page}
-                onClick={handleCloseNavMenu}
-                // sx={{ m: 2, color: "#000", display: "block", textDecoration: "none" }}
-              >
-                {page}
-              </MenuItem>
+                <NavLink 
+                 key={page}
+                onClick={handleCloseNavMenu} to={page.link} 
+                style={{  textDecoration: "none", margin:"10px",color:"#fff",  backgroundColor:"transparent" }}>
+                {page.title}
+                </NavLink>
+            
             ))}
           </Box>
           {/* Modal sign in & sign up */}
@@ -183,7 +190,7 @@ function NavBar() {
             </Box>
           ) : (
             <Box>
-              <Button onClick={handleOpen}>Sign in</Button>
+              <Button onClick={handleOpen} sx={{fontWeight: "600", color:"#fff"}} >Sign in</Button>
             </Box>
           )}
           <Modal open={openModal} onClose={handleClose}>
