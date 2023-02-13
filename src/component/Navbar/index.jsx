@@ -25,7 +25,8 @@ const settings = ["Profile", "Account", "Dashboard", "Logout"];
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const { user, setUser, openModal,  handleClose, handleOpen } = useContext(UserContext)
+  const { user, setUser, openModal, handleClose, handleOpen } =
+    useContext(UserContext);
   // const [open, setOpen] = React.useState(false);
   // const onClick = () => setOpen(true);
   // const onClose = () => setOpen(false);
@@ -107,7 +108,11 @@ function NavBar() {
               }}
             >
               {pages.map((page) => (
-                <Button  sx={{ textDecoration: "none"}}  key={page} onClick={handleCloseNavMenu}>
+                <Button
+                  sx={{ textDecoration: "none" }}
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                >
                   <Typography textAlign="center">{page}</Typography>
                 </Button>
               ))}
@@ -182,9 +187,7 @@ function NavBar() {
             </Box>
           )}
           <Modal open={openModal} onClose={handleClose}>
-            <Login 
-            // handleClose={handleClose} setUser={setUser}
-             />
+            <Login />
           </Modal>
           <Box>
             <ShoppingCartIcon sx={{ fontSize: "2rem", marginX: "1rem" }} />

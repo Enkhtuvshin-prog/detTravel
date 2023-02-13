@@ -21,7 +21,7 @@ export default function SignIn({ setIsSignIn }) {
   const [message, setMessage] = React.useState("");
   const [isAlert, setAlert] = React.useState(false);
   const [status, setStatus] = React.useState("error");
-  const {handleClose, setUser} = React.useContext(UserContext)
+  const { handleClose, setUser } = React.useContext(UserContext);
 
   const changeEmail = (e) => {
     setEmail(e.target.value);

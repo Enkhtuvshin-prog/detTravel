@@ -11,9 +11,9 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-// import { UserContext } from "../../../App";
+import { UserContext } from "../../../App";
 
-export default function SignUp(props) {
+export default function SignUp({ setIsSignIn }) {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -21,7 +21,7 @@ export default function SignUp(props) {
   const [message, setMessage] = useState("");
   const [isAlert, setAlert] = useState("");
   const [status, setStatus] = useState("error");
-// const {setUser} = React.useContext(UserContext)
+  const { setUser } = React.useContext(UserContext);
   const changeEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -54,7 +54,7 @@ export default function SignUp(props) {
       setMessage(res.data.message);
       setStatus("success");
       setAlert(true);
-      props.setIsSignIn(true);
+      setIsSignIn(true);
     } catch (error) {
       setStatus("error");
       setAlert(true);
@@ -168,7 +168,7 @@ export default function SignUp(props) {
               <Button
                 variant="text"
                 onClick={() => {
-                  props.setIsSignIn(true);
+                  setIsSignIn(true);
                 }}
               >
                 Already have an account? Sign in
