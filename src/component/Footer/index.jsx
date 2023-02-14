@@ -11,7 +11,7 @@ const text3 = ["Hedge Karla", "Mullein Koşulları", "Mullein Koşulları"]
 const Footer = () => {
     return (
         <Grid sx={{
-            backgroundColor: "#141414"
+            backgroundColor: "#2d394b"
         }}>
             <Container>
                 <Box sx={{ display: "flex", justifyContent: "space-between", color: "#808080", paddingY: 8 }}>

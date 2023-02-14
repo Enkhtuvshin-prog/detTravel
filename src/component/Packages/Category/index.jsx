@@ -10,12 +10,14 @@ const CategoryList = () => {
     try{
       const res = await axios.get('http://localhost:8003/categories');
       // console.log("resCat", res.data.data.categories);
-      setIsCategory(res.data.data.categories)     
+      // setIsCategory(res.data.data.categories)     
     } catch(err){
       console.log(err)
     }
   }
   getCategory();
+  // console.log(isCategory)
+
   return (
     <>
     <Box sx={{display:"flex"}}>

@@ -182,7 +182,7 @@ function NavBar() {
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={logout}>
+                  <MenuItem key={setting} onClick={logout} >
                     <Typography textAlign="center">{setting}</Typography>
                   </MenuItem>
                 ))}
@@ -194,7 +194,7 @@ function NavBar() {
             </Box>
           )}
           <Modal open={openModal} onClose={handleClose}>
-            <Login />
+            <Login/>
           </Modal>
           <Box>
             <ShoppingCartIcon sx={{ fontSize: "2rem", marginX: "1rem" }} />

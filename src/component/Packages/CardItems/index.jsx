@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Link,Grid, Box, CardActionArea, CardActions } from '@mui/material';
-import { cards } from './data';
+// import { cards } from './data';
+import axios from 'axios';
 
 const CardItems = () => {
+  const [isTravel, setIsTravel] = useState([]);
+  const getTravels =async()=>{
+    try{
+
+      const res = await axios("http://localhost:8003/travel")
+      console.log("getTravel:", res.data.data.travel );
+      setIsTravel(res.data.data.travel)
+    }catch(err){
+      console.log(err);
+    }
+  }
+  getTravels();
   return (
     <Box>
       <Grid container spacing={1}>
         {
-          cards.map((x) =>
+          isTravel.map((x) =>
             <Grid item xs={12} sm={6} md={4} lg={3}>
               <Card sx={{ maxWidth: 345 }}>
                 <CardActionArea>
