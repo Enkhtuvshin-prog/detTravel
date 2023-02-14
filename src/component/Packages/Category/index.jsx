@@ -1,37 +1,40 @@
-import { Button } from '@mui/material'
-import { Box } from '@mui/system'
-import axios from 'axios'
-import React, { useState, useEffect } from 'react'
+import { Button } from "@mui/material";
+import { Box } from "@mui/system";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 
 // const c = ["Beaches", "Mountian", "Ballon flights", "Desert", "Camping", "Skiing", "Houseboats", "Castles" ,"Others"]
 const CategoryList = () => {
-  const [isCategory, setIsCategory] = useState([])
+  const [category, setCategory] = useState([]);
   const getCategory = async () => {
-    try{
-      const res = await axios.get('http://localhost:8003/categories');
-      // console.log("resCat", res.data.data.categories);
-      // setIsCategory(res.data.data.categories)     
-    } catch(err){
-      console.log(err)
+    try {
+      const res = await axios.get("http://localhost:8003/categories");
+
+      console.log("resCat", res.data.data.categories);
+      setCategory(res.data.data.categories);
+    } catch (err) {
+      console.log(err);
     }
-  }
-  getCategory();
+  };
+  // getCategory();
   // console.log(isCategory)
+  useEffect(() => {
+    console.log("Worked");
+    getCategory();
+  }, []);
 
   return (
     <>
-    <Box sx={{display:"flex"}}>
-      {
-        isCategory.map((x)=>
-        <Button variant='h3' sx={{margin: 1, color: "#2d394"}}>
-          {x.title}
-        </Button>
-        )
-      }
-    </Box>
-    
+      {console.log("return")}
+      <Box sx={{ display: "flex" }}>
+        {category.map((x) => (
+          <Button variant="h3" sx={{ margin: 1, color: "#2d394" }}>
+            {x.title}
+          </Button>
+        ))}
+      </Box>
     </>
-  )
-}
+  );
+};
 
-export default CategoryList
+export default CategoryList;
