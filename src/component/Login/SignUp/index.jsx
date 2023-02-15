@@ -21,7 +21,7 @@ export default function SignUp({ setIsSignIn }) {
   const [message, setMessage] = useState("");
   const [isAlert, setAlert] = useState("");
   const [status, setStatus] = useState("error");
-  const { setUser } = React.useContext(UserContext);
+  // const { setUser } = React.useContext(UserContext);
   const changeEmail = (e) => {
     setEmail(e.target.value);
   };

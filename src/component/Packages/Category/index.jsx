@@ -2,6 +2,7 @@ import { Button } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import Add from "./Add";
 
 // const c = ["Beaches", "Mountian", "Ballon flights", "Desert", "Camping", "Skiing", "Houseboats", "Castles" ,"Others"]
 const CategoryList = () => {
@@ -32,6 +33,9 @@ const CategoryList = () => {
             {x.title}
           </Button>
         ))}
+        <Button>
+          <Add/>
+        </Button>
       </Box>
     </>
   );

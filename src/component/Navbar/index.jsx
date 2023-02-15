@@ -55,7 +55,13 @@ function NavBar() {
     setUser(null);
     localStorage.removeItem("user");
   };
+const handleLogout = (oper)=>{
+  if(oper === "Logout"){
+    logout();
+  }
+  handleCloseUserMenu();
 
+}
   return (
     <AppBar
       // position="static"
@@ -182,7 +188,7 @@ function NavBar() {
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={logout} >
+                  <MenuItem key={setting} onClick={()=>{handleLogout(setting)}} >
                     <Typography textAlign="center">{setting}</Typography>
                   </MenuItem>
                 ))}
