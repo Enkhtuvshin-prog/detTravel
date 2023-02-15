@@ -1,7 +1,8 @@
 import { Button } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { UserContext } from "../../../App";
 import Add from "./Add";
 
 // const c = ["Beaches", "Mountian", "Ballon flights", "Desert", "Camping", "Skiing", "Houseboats", "Castles" ,"Others"]
@@ -34,7 +35,7 @@ const CategoryList = () => {
           </Button>
         ))}
         <Button>
-          <Add/>
+          <Add />
         </Button>
       </Box>
     </>

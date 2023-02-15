@@ -18,13 +18,12 @@ import Login from "../Login";
 import { UserContext } from "../../App";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
-import { fontSize } from "@mui/system";
 
 const pages = [
-  {title:"Home", link:"/"}, 
-  {title:"Review", link: "/review"},
-  {title:"Trips", link: "/trips"},
-  {title: "Alerts", link: "/alets"}
+  { title: "Home", link: "/" },
+  { title: "Review", link: "/review" },
+  { title: "Trips", link: "/trips" },
+  { title: "Alerts", link: "/alets" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -55,17 +54,16 @@ function NavBar() {
     setUser(null);
     localStorage.removeItem("user");
   };
-const handleLogout = (oper)=>{
-  if(oper === "Logout"){
-    logout();
-  }
-  handleCloseUserMenu();
-
-}
+  const handleLogout = (oper) => {
+    if (oper === "Logout") {
+      logout();
+    }
+    handleCloseUserMenu();
+  };
   return (
     <AppBar
       // position="static"
-      sx={{ backgroundColor: "#2d394b", color: "#fff",  }}
+      sx={{ backgroundColor: "#2d394b", color: "#fff" }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -120,14 +118,14 @@ const handleLogout = (oper)=>{
               }}
             >
               {pages.map((page) => (
-               
-                  <NavLink to={page.link} 
+                <NavLink
+                  to={page.link}
                   key={page}
                   onClick={handleCloseNavMenu}
-                  style={{textDecoration: "none", margin:1, color: "#fff" }}
-                    >
+                  style={{ textDecoration: "none", margin: 1, color: "#fff" }}
+                >
                   <Typography textAlign="center">{page.title}</Typography>
-                  </NavLink>
+                </NavLink>
               ))}
             </Menu>
           </Box>
@@ -154,13 +152,19 @@ const handleLogout = (oper)=>{
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-                <NavLink 
-                 key={page}
-                onClick={handleCloseNavMenu} to={page.link} 
-                style={{  textDecoration: "none", margin:"10px",color:"#fff",  backgroundColor:"transparent" }}>
+              <NavLink
+                key={page}
+                onClick={handleCloseNavMenu}
+                to={page.link}
+                style={{
+                  textDecoration: "none",
+                  margin: "10px",
+                  color: "#fff",
+                  backgroundColor: "transparent",
+                }}
+              >
                 {page.title}
-                </NavLink>
-            
+              </NavLink>
             ))}
           </Box>
           {/* Modal sign in & sign up */}
@@ -188,7 +192,12 @@ const handleLogout = (oper)=>{
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={()=>{handleLogout(setting)}} >
+                  <MenuItem
+                    key={setting}
+                    onClick={() => {
+                      handleLogout(setting);
+                    }}
+                  >
                     <Typography textAlign="center">{setting}</Typography>
                   </MenuItem>
                 ))}
@@ -196,11 +205,16 @@ const handleLogout = (oper)=>{
             </Box>
           ) : (
             <Box>
-              <Button onClick={handleOpen} sx={{fontWeight: "600", color:"#fff"}} >Sign in</Button>
+              <Button
+                onClick={handleOpen}
+                sx={{ fontWeight: "600", color: "#fff" }}
+              >
+                Sign in
+              </Button>
             </Box>
           )}
           <Modal open={openModal} onClose={handleClose}>
-            <Login/>
+            <Login />
           </Modal>
           <Box>
             <ShoppingCartIcon sx={{ fontSize: "2rem", marginX: "1rem" }} />

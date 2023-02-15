@@ -4,13 +4,12 @@ import { Container, Box } from "@mui/system";
 // import About from "./About";
 function DetailCard() {
   return (
-    <Box id= "Package">
+    <Box id="Package">
       <Container>
         <CarouselCard />
         <AccordionItem />
       </Container>
     </Box>
-
   );
 }
 
