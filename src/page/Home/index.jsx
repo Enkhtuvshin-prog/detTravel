@@ -6,6 +6,7 @@ import {Typewriter} from "react-simple-typewriter"
 import Offers from '../../component/Offrers';
 import Service from "../../component/Services"
 import Packages from '../../component/Packages';
+import Banner from '../../component/Banner';
 const Home = () => {
   return (
     <>
@@ -18,10 +19,9 @@ const Home = () => {
       backgroundAttachment: "fixed",
       fill: "linearGradient rgba(255, 255, 255, 0)",
       height: "90vh",
-      with: "100%"
     }} >
     </Box>
-    <Box sx={{position: "absolute", top: "30%", left:"10%", color:"#fff", fontSize:"2rem"}}>
+    <Box width={"100%"}  sx={{position: "absolute", top: "20%", left:"10%", color:"#fff", fontSize:"2rem",}}>
       <Typography variant='h4'>
         A Team of professional travel expert
       </Typography>
@@ -35,6 +35,10 @@ const Home = () => {
             </span> 
       </Typography>
       <Button variant="outlined" color="success" sx={{my: 3, fontWeight: 600}} >Get in touch</Button>
+      <Box>
+      <Banner/>      
+    </Box>
+
     </Box>
     <Container>
       <ImgCard/>
