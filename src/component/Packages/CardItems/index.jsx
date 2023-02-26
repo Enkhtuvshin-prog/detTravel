@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Link, Grid, Box, CardActionArea, CardActions } from "@mui/material";
+import { Link, Grid, Box, CardActionArea, CardActions, Button } from "@mui/material";
 // import { cards } from './data';
 import axios from "axios";
 
@@ -50,6 +50,7 @@ const CardItems = () => {
                 <Link href="/Detail" size="small" color="primary">
                   {x.btn}
                 </Link>
+                <Button sx={{ mx: "auto" }} >+Add</Button>
               </CardActions>
             </Card>
           </Grid>

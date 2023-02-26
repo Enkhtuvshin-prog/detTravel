@@ -12,12 +12,12 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import TravelExploreTwoToneIcon from "@mui/icons-material/TravelExploreTwoTone";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Modal } from "@mui/material";
 import Login from "../Login";
 import { UserContext } from "../../App";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
+import TemporaryDrawer from "../Sags";
 
 const pages = [
   { title: "Home", link: "/" },
@@ -122,9 +122,9 @@ function NavBar() {
                   to={page.link}
                   key={page}
                   onClick={handleCloseNavMenu}
-                  style={{ textDecoration: "none", margin: 1, color: "#fff" }}
+                  style={{ textDecoration: "none", margin: "20px", color: "#000"  }}
                 >
-                  <Typography textAlign="center">{page.title}</Typography>
+                  {page.title}
                 </NavLink>
               ))}
             </Menu>
@@ -217,7 +217,7 @@ function NavBar() {
             <Login />
           </Modal>
           <Box>
-            <ShoppingCartIcon sx={{ fontSize: "2rem", marginX: "1rem" }} />
+            <TemporaryDrawer/>
           </Box>
         </Toolbar>
       </Container>

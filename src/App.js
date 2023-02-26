@@ -7,6 +7,7 @@ import NavBar from "./component/Navbar";
 import { Typography } from "@mui/material";
 import DetailCard from "./component/Detail";
 import { createContext, Provider } from "react";
+import Booking from "./page/Booking"
 export const UserContext = createContext(null);
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -24,6 +25,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Detail" element={<DetailCard />} />
+            <Route path="/Booking" element={<Booking/>} />
           </Routes>
           <Footer />
         </Router>

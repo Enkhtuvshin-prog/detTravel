@@ -23,7 +23,6 @@ const Home = () => {
         }}
       ></Box>
       <Box
-        // width={"100%"}
         sx={{
           position: "absolute",
           top: "20%",
@@ -45,16 +44,13 @@ const Home = () => {
           </span>
         </Typography>
         <Button
-          variant="outlined"
+          variant="contained"
           color="success"
           sx={{ my: 3, fontWeight: 600 }}
         >
           Get in touch
         </Button>
-        {/* <Box>
-      <Banner/>      
-    </Box>
- */}
+        <Banner/>
       </Box>
       <Container>
         <ImgCard />

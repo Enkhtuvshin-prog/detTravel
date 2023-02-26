@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Grid } from "@mui/material";
+import { Grid, Link } from "@mui/material";
 
 export default function Itmes(props) {
   return (
@@ -25,9 +25,10 @@ export default function Itmes(props) {
             {props.title}
           </Typography>
           <Typography variant="body2">{props.text}</Typography>
-          <Button variant="contained" sx={{ m: 1 }}>
-            Book now
-          </Button>
+
+          <Link href="Booking" underline="none" sx={{ m: 1 }}>
+           <Button variant="contained" sx={{ m: 1 }} >Book now</Button>
+          </Link>
         </CardContent>
       </Card>
     </Grid>
