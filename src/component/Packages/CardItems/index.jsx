@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import { Link, Grid, Box, CardActionArea, CardActions, Button } from "@mui/material";
 // import { cards } from './data';
 import axios from "axios";
-
+import HalfRating from "../../Rating";
 const CardItems = () => {
   const [isTravel, setIsTravel] = useState([]);
   const getTravels = async () => {
@@ -28,7 +28,7 @@ const CardItems = () => {
       <Grid container spacing={1} >
         {isTravel.map((x) => (
           <Grid item xs={12} sm={6} md={4} lg={3}>
-            <Card sx={{ maxWidth: 345, height: 400 }}>
+            <Card sx={{ maxWidth: 345, height: 420 }}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -46,11 +46,15 @@ const CardItems = () => {
                   <Typography>{x.price}</Typography>
                 </CardContent>
               </CardActionArea>
-              <CardActions>
+              <Box sx={{display:"flex", justifyContent:"flex-end", p:1}}>
+                <HalfRating/>
+                <Typography>4.7</Typography>
+              </Box>
+              <CardActions sx={{display: "flex", justifyContent:"space-between"}}>
                 <Link href="/Detail" size="small" color="primary">
                   READ MORE
                 </Link>
-                <Button sx={{ mx: "auto" }} >+Add</Button>
+                <Button>+Add</Button>
               </CardActions>
             </Card>
           </Grid>

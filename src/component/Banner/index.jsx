@@ -23,8 +23,8 @@ const Banner = () => {
                      border: "3px orange solid",
                      height: "10vh"
                 }}>
-                    <Box sx={{display: "flex"}} p={"10px"} >
-                    <CalendarMonthIcon sx={{color:"#000"}} />
+                    <Box sx={{display: "flex"}} >
+                    <CalendarMonthIcon sx={{color:"#000", paddingTop:"15px"}} />
                      <DatePicker/>
                     </Box>
                 </Grid>
@@ -40,16 +40,16 @@ const Banner = () => {
                      
                     }}>
 
-                    <span><PermIdentityIcon /></span><Typography  >adult - children - rooms </Typography>
+                    <span><PermIdentityIcon /></span><Typography sx={{paddingTop:"5px"}} >adult - children - rooms </Typography>
                     </Box>
                 </Grid>
 
                 <Grid item xs={12} md={2} lg={2}   sx={{
                      border: "3px orange solid",
-                     height: "10vh",
-                     width:"100%"
+                    height: "10vh",
+                     maxWidth: "100%"
                 }}>
-                    <Button variant='contained'  width={"100%"}  display={"inline"}>Search</Button>
+                    <Button variant='contained' sx={{ width: "100%", height:"100%"}} >Search</Button>
                 </Grid>
             </Grid>
         </Box>
