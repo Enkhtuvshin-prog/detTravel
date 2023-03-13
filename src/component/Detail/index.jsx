@@ -7,13 +7,11 @@ function DetailCard() {
     <Box id="Package">
       <Box
         sx={{
-          backgroundImage: `url("/img/booking/654659.jpg")`,
+          backgroundImage: `url("/img/Destination1.png")`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          // height: "calc(100vh - 100px)",
           backgroundPosition: "center center",
           backgroundAttachment: "fixed",
-          fill: "linearGradient rgba(255, 255, 255, 0)",
           height: "90vh",
         }}
       ></Box>

@@ -12,8 +12,8 @@ const CardItems = () => {
   const getTravels = async () => {
     try {
       const res = await axios("http://localhost:8003/travel");
-      console.log("getTravel:", res.data.data.travel);
-      setIsTravel(res.data.data.travel);
+      console.log("getTravel===", res.data.data);
+      setIsTravel(res.data.data);
     } catch (err) {
       console.log(err);
     }
@@ -25,10 +25,10 @@ const CardItems = () => {
   }, []);
   return (
     <Box>
-      <Grid container spacing={1}>
+      <Grid container spacing={1} >
         {isTravel.map((x) => (
           <Grid item xs={12} sm={6} md={4} lg={3}>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345, height: 400 }}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -41,14 +41,14 @@ const CardItems = () => {
                     {x.title}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    {x.text}
+                    {x.detail}
                   </Typography>
                   <Typography>{x.price}</Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
                 <Link href="/Detail" size="small" color="primary">
-                  {x.btn}
+                  READ MORE
                 </Link>
                 <Button sx={{ mx: "auto" }} >+Add</Button>
               </CardActions>
