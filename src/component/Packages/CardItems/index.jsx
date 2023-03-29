@@ -11,9 +11,9 @@ const CardItems = () => {
   const [isTravel, setIsTravel] = useState([]);
   const getTravels = async () => {
     try {
-      const res = await axios("http://localhost:8003/travel");
-      console.log("getTravel===", res.data.data);
-      setIsTravel(res.data.data);
+      const res = await axios.get("http://localhost:8000/travel");
+      console.log("getTravel===", res.data.travel);
+      setIsTravel(res.data.travel);
     } catch (err) {
       console.log(err);
     }
@@ -33,7 +33,7 @@ const CardItems = () => {
                 <CardMedia
                   component="img"
                   height="140"
-                  image={x.img}
+                  image={x.images}
                   alt="green iguana"
                 />
                 <CardContent>
